@@ -22,7 +22,7 @@ for i in range(NUM):
 ...
 ```
 
-## Programs Benchmarked
+## Programs benchmarked
 
 - **Mojo**: (with Mojo 24.5 and current nightly build)
   - `stdlib_dict.mojo`: Uses Mojo's standard dictionary.
