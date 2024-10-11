@@ -26,7 +26,7 @@ for i in range(NUM):
 
 - **Mojo**: (with Mojo 24.5 and current nightly build)
   - `stdlib_dict.mojo`: Uses Mojo's standard dictionary.
-  - `compact_dict.mojo`: Uses [compact-dict](https://github.com/mzaks/compact-dict) for better memory efficiency.
+  - `compact_dict.mojo`: Uses [compact-dict](https://github.com/mzaks/compact-dict).
   - `python_dict.mojo`: Uses Python's dictionary via Mojo's [Python integration](https://docs.modular.com/mojo/manual/python/).
   
 
