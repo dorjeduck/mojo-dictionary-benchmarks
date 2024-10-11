@@ -3,6 +3,7 @@
 *.egg-info
 # magic environments
 .magic
+.DS_Store
 
 # results
 /results/*.json
