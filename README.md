@@ -1,6 +1,6 @@
 # Mojo dictionary benchmarks
 
-This repository contains programs to benchmark different dictionary implementations in **Mojo**, with comparisons to other languages (currently Python and Rust). The main goal is to evaluate the performance of Mojo's dictionary implementations and set up a foundation for future improvements.
+This repository contains programs to benchmark different dictionary implementations in **Mojo**, with comparisons to other languages (currently Python and Rust). The main goal is to evaluate the performance of Mojo's dictionary implementations and set up a simple framework for future evaluations.
 
 ## Overview
 
