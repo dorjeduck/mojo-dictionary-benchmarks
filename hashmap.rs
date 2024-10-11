@@ -37,7 +37,7 @@ fn main() {
     // Check for --optimized flag to change the program name and output file name
     let args: Vec<String> = env::args().collect();
     let (program_name, file_name) = if args.contains(&"--optimized".to_string()) {
-        ("-C opt-level=3 hashmap.rs", "hashmap_optimized-rs.json")
+        ("hashmap.rs (optimized)", "hashmap_optimized-rs.json")
     } else {
         ("hashmap.rs", "hashmap-rs.json")
     };
