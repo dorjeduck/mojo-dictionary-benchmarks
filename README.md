@@ -24,13 +24,14 @@ for i in range(NUM):
 
 ## Programs Benchmarked
 
-- **Mojo**:
+- **Mojo**: (with Mojo 24.5 and current nightly build)
   - `stdlib_dict.mojo`: Uses Mojo's standard dictionary.
   - `compact_dict.mojo`: Uses [compact-dict](https://github.com/mzaks/compact-dict) for better memory efficiency.
   - `python_dict.mojo`: Uses Python's dictionary via Mojo's [Python integration](https://docs.modular.com/mojo/manual/python/).
+  
 
 - **Python**:
-  - `stdlib_dict.py`: Implements the same operations as Mojo using Pythons's standard ditionary.
+  - `stdlib_dict.py`: Implements the same operations as Mojo using Pythons's standard dictionary.
 
 - **Rust**: 
   - `hashmap.rs`: Benchmarks Rust's `HashMap`, both in standard mode and with `-C opt-level=3` for optimization.
