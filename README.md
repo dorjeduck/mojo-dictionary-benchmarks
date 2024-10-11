@@ -1,6 +1,6 @@
-# mojo-dictionary-benchmarks
+# Mojo dictionary benchmarks
 
-This repository contains a set of programs designed to benchmark various dictionary implementations in **Mojo**, with additional comparisons to other programming languages (Python and Rust right now). The goal is to evaluate the performance of Mojo's dictionary implementations and provide a setup for experiments.
+This repository contains programs to benchmark different dictionary implementations in **Mojo**, with comparisons to other languages (currently Python and Rust). The main goal is to evaluate the performance of Mojo's dictionary implementations and set up a foundation for future improvements.
 
 ## Overview
 
@@ -48,6 +48,7 @@ To run the benchmarks, use the provided shell script:
 ```sh
 bash ./benchmarks.sh
 ```
+After running the benchmarks, you can view the performance comparison in `results/benchmarks.md` and a plot in `results/benchmark.png`.
 
 ## Benchmarks
 
