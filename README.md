@@ -66,9 +66,9 @@ After running the benchmarks, you can view the performance comparison in `result
 
 ![Chart](./results/benchmarks.png)
 
-## Contributing
+Contributing
 
-Feel free to open issues or submit pull requests if you'd like to add more benchmarks, improve the current ones, or any other suggestions.
+Contributions are welcome! If you'd like to add new benchmarks, enhance the current ones, or any suggestions, please open an issue or submit a pull request.
 
 ## Changelog
 
