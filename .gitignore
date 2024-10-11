@@ -5,7 +5,7 @@
 .magic
 
 # results
-/results/*
+/results/*.json
 # binaries
 /bin/*
 
