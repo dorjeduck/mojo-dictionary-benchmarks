@@ -12,13 +12,22 @@ The programs benchmark the following operations:
 
 ```python
 ...
+var keys = List[String](capacity = NUM)
 for i in range(NUM):
-    dic[str(i*2)] = i % 7
+    keys[i] = "k"+str(i) 
+
+var start = now()
+
+var dic = Dict[String,Int]()
+for i in range(NUM):
+    dic[keys[i]] = i % 7
 for i in range(0,NUM,2):
-    dic[str(i*2)] *= 2
+    dic[keys[i]] *= 2
 var sum_val = 0
 for i in range(NUM):
-    sum_val += dic[str(i*2)]
+    sum_val += dic[keys[i]]
+
+var elapsed = (now()-start)/1e9 
 ...
 ```
 
