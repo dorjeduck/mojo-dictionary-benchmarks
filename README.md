@@ -72,6 +72,8 @@ Contributions are welcome! If you'd like to add new benchmarks, enhance the curr
 
 ## Changelog
 
+- 2024.10.12
+  - Reimplementation based on Discord feedback.
 - 2024.10.11
   - Intial commit
 
