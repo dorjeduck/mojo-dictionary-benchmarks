@@ -10,7 +10,6 @@ const NUM: usize = 1_000_000;
 fn main() {
     let mut keys = vec![String::new(); NUM];
 
-    // Populate the list with strings of even numbers
     for i in 0..NUM {
         keys[i] = format!("k{}", i);
     }
@@ -45,11 +44,8 @@ fn main() {
         ("hashmap.rs", "hashmap-rs.json")
     };
 
-    // Write results to JSON file in results directory
-    let results_dir = "results";
-    let results_dir_path = Path::new(results_dir);
-    let result_file_path = results_dir_path.join(file_name);
+    let results_dir_path = Path::new("results").join(file_name);
     let results = format!(r#"{{"program": "{}", "time_sec": {:.6}, "sum": {}}}"#, program_name, elapsed, sum_val);
-    let mut file = File::create(result_file_path).unwrap();
+    let mut file = File::create(results_dir_path).unwrap();
     writeln!(file, "{}", results).unwrap();
 }

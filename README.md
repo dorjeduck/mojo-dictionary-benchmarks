@@ -33,7 +33,7 @@ for i in range(NUM):
   - `stdlib_dict.py`: Implements the same operations as Mojo using Pythons's standard dictionary.
 
 - **Rust**:
-  - `hashmap.rs`: Benchmarks Rust's `HashMap`, both in standard mode and with `-C opt-level=3` for optimization.
+  - `hashmap.rs`: Benchmarks Rust's `HashMap`, both in standard mode and with `-C opt-level=3` for optimization. (Suggestions on how to improve this basic implementation most welcome.)
 
 ## Requirements
 
@@ -54,15 +54,15 @@ After running the benchmarks, you can view the performance comparison in `result
 
 | Program | Time (seconds) |
 |---------|----------------|
-| compact_dict.mojo (nightly) | 0.082010 sec |
-| compact_dict.mojo | 0.082316 sec |
-| hashmap.rs (optimized) | 0.155166 sec |
-| stdlib_dict.py | 0.235314 sec |
-| hashmap.rs | 0.468173 sec |
-| stdlib_dict.mojo (nightly) | 2.317834 sec |
-| stdlib_dict.mojo | 2.557379 sec |
-| python_dict.mojo (nightly) | 9.829860 sec |
-| python_dict.mojo | 10.569780 sec |
+| compact_dict.mojo (nightly) | 0.082251 sec |
+| compact_dict.mojo | 0.084032 sec |
+| hashmap.rs (optimized) | 0.143373 sec |
+| stdlib_dict.py | 0.264387 sec |
+| hashmap.rs | 0.470244 sec |
+| stdlib_dict.mojo (nightly) | 2.319244 sec |
+| stdlib_dict.mojo | 2.523637 sec |
+| python_dict.mojo (nightly) | 9.789734 sec |
+| python_dict.mojo | 10.352229 sec |
 
 ![Chart](./results/benchmarks.png)
 
