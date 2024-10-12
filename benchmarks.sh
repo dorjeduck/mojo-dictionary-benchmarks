@@ -25,11 +25,11 @@ python stdlib_dict.py
 
 # Run Rust program without optimization
 echo "rustc hashmap.rs"
-rustc hashmap.rs -o ./bin/hashmap && ./bin/hashmap
+rustc hashmap.rs -C target-cpu=native -o ./bin/hashmap && ./bin/hashmap
 
 # Run Rust program with optimization
 echo "rustc hashmap.rs -C opt-level=3"
-rustc hashmap.rs -C opt-level=3 -o ./bin/hashmap_optimized && ./bin/hashmap_optimized --optimized
+rustc hashmap.rs -C target-cpu=native -C opt-level=3 -o ./bin/hashmap_optimized && ./bin/hashmap_optimized --optimized
 
 # Plot results
 echo ""

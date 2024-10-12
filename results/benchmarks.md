@@ -2,14 +2,14 @@
 
 | Program | Time (seconds) |
 |---------|----------------|
-| hashmap.rs (optimized) | 0.062228 sec |
-| stdlib_dict.py | 0.378968 sec |
-| hashmap.rs | 0.456287 sec |
-| compact_dict.mojo (nightly) | 0.661226 sec |
-| compact_dict.mojo | 0.726776 sec |
-| stdlib_dict.mojo (nightly) | 2.474072 sec |
-| stdlib_dict.mojo | 2.715950 sec |
-| python_dict.mojo (nightly) | 10.157776 sec |
-| python_dict.mojo | 10.727387 sec |
+| compact_dict.mojo (nightly) | 0.082010 sec |
+| compact_dict.mojo | 0.082316 sec |
+| hashmap.rs (optimized) | 0.155166 sec |
+| stdlib_dict.py | 0.235314 sec |
+| hashmap.rs | 0.468173 sec |
+| stdlib_dict.mojo (nightly) | 2.317834 sec |
+| stdlib_dict.mojo | 2.557379 sec |
+| python_dict.mojo (nightly) | 9.829860 sec |
+| python_dict.mojo | 10.569780 sec |
 
 ![Performance Chart](benchmark.png)

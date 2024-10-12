@@ -12,19 +12,22 @@ fn write_json(file_path:String,program:String,time_sec:Float64,sum:Int) raises:
 
 fn main() raises:
 
+    var keys = List[String](capacity = NUM)
+    for i in range(NUM):
+        keys[i] = "k"+str(i) 
+
     var start = now()
     
     var dic =  StringDict[Int]()
 
     for i in range(NUM):
-        dic.put(str(i*2),i%7)
+        dic.put(keys[i],i%7)
     for i in range(0,NUM,2):
-        var val = dic.get(str(i*2),0)
-        dic.put(str(i*2),val*2)   
+        dic.put(keys[i],dic.get(keys[i],0)*2)   
 
     var sum = 0
     for i in range(NUM):
-        sum += dic.get(str(i*2),-1)
+        sum += dic.get(keys[i],-1)
 
     var elapsed = (now()-start)/1e9 
  
