@@ -82,7 +82,7 @@ Contributions are welcome! If you'd like to add new benchmarks, enhance the curr
 ## Changelog
 
 - 2024.10.12
-  - Reimplementation based on Discord feedback.
+  - Reimplemented based on feedback provided by the community on the [Modular Discord server](https://discord.gg/xZktyT2q).
 - 2024.10.11
   - Intial commit
 
