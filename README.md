@@ -13,29 +13,24 @@ The programs benchmark the following operations:
 2. **Value Modification**: Modifying values for keys in the dictionary.
 3. **Summation**: Calculating a sum based on the dictionary's values.
 
-```python
+```mojo
 ...
-var
-keys = List[String](capacity=NUM)
+var keys = List[String](capacity=NUM)
 for i in range(NUM):
     keys[i] = "k" + str(i)
 
-var
-start = now()
+var start = now()
 
-var
-dic = Dict[String, Int]()
+var dic = Dict[String, Int]()
 for i in range(NUM):
     dic[keys[i]] = i % 7
 for i in range(0, NUM, 2):
     dic[keys[i]] *= 2
-var
-sum_val = 0
+var sum_val = 0
 for i in range(NUM):
     sum_val += dic[keys[i]]
 
-var
-elapsed = (now() - start) / 1e9
+var elapsed = (now() - start) / 1e9
 ...
 ```
 
