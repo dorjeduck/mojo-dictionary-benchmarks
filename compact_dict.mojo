@@ -1,22 +1,22 @@
 from string_dict import Dict as StringDict
 from sys import argv
-from time import now
+from time import perf_counter_ns
 
 alias NUM = 1_000_000
 
 fn write_json(file_path:String,program:String,time_sec:Float64,sum:Int) raises:
     var file = open(file_path, "w")
-    var out = '{' + '"program": ' + '"' + program + '", ' + '"time_sec": ' + str(time_sec) + ', "sum": ' + str(sum) + '}'
-    file.write(out)
+    var out_str = '{' + '"program": ' + '"' + program + '", ' + '"time_sec": ' + String(time_sec) + ', "sum": ' + String(sum) + '}'
+    file.write(out_str)
     file.close()
 
 fn main() raises:
 
     var keys = List[String](capacity = NUM)
     for i in range(NUM):
-        keys[i] = "k"+str(i) 
+        keys[i] = "k"+String(i)
 
-    var start = now()
+    var start = perf_counter_ns()
     
     var dic =  StringDict[Int]()
 
@@ -29,7 +29,7 @@ fn main() raises:
     for i in range(NUM):
         sum += dic.get(keys[i],-1)
 
-    var elapsed = (now()-start)/1e9 
+    var elapsed = (perf_counter_ns()-start)/1e9
  
     if len(argv()) >= 2 and argv()[1] == '--nightly':
         write_json('./results/compact_dict_nightly-mojo.json','compact_dict.mojo (nightly)',elapsed,sum)
