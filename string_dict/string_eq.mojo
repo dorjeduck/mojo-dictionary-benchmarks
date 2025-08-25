@@ -10,7 +10,7 @@ fn eq(a: String, b: String) -> Bool:
     var p2 = UnsafePointer(b.unsafe_ptr())
     var offset = 0
     alias step = 16
-    while l - offset >= step and (p1.load[width=step](offset) == p2.load[width=step](offset)).reduce_and():
+    while l - offset >= step and (p1.load[width=step](offset) == p2.load[width=step](offset)):
         offset += step
     if l - offset >= step:
         return False

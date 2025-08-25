@@ -31,14 +31,14 @@ struct KeysContainer[KeyEndType: DType = DType.uint32](Sized):
         self.keys_end = UnsafePointer[Scalar[KeyEndType]].alloc(self.allocated_bytes)
         memcpy(self.keys_end, existing.keys_end, self.capacity)
 
-    fn __moveinit__(out self, owned existing: Self):
+    fn __moveinit__(out self, deinit existing: Self):
         self.allocated_bytes = existing.allocated_bytes
         self.count = existing.count
         self.capacity = existing.capacity
         self.keys = existing.keys
         self.keys_end = existing.keys_end
 
-    fn __del__(owned self):
+    fn __del__(deinit self):
         self.keys.free()
         self.keys_end.free()
 

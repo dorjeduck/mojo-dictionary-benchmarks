@@ -72,7 +72,7 @@ struct Dict[
         else:
             self.deleted_mask = UnsafePointer[UInt8].alloc(0)
 
-    fn __moveinit__(out self, owned existing: Self):
+    fn __moveinit__(out self, deinit existing: Self):
         self.count = existing.count
         self.capacity = existing.capacity
         self.keys = existing.keys^
@@ -81,7 +81,7 @@ struct Dict[
         self.slot_to_index = existing.slot_to_index
         self.deleted_mask = existing.deleted_mask
 
-    fn __del__(owned self):
+    fn __del__(deinit self):
         self.slot_to_index.free()
         self.deleted_mask.free()
         self.key_hashes.free()

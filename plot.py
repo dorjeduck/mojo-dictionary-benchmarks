@@ -7,8 +7,6 @@ import os
 parser = argparse.ArgumentParser()
 parser.add_argument("--no-show", action="store_true", help="Disable showing the plot")
 args = parser.parse_args()
-
-# Result directory
 results_dir = "results"
 
 # Read all JSON files in the results directory
@@ -30,12 +28,13 @@ if incorrect_files:
 else:
     print("All tests passed.")
 
-# Sort results from fastest to slowest 
-results.sort(key=lambda x: x["time_sec"], reverse=True)
+# Sort results from fastest to slowest
+results.sort(key=lambda x: x["time_sec_mean"], reverse=True)
 
 # Extract data for plotting
 programs = [entry["program"] for entry in results]
-times = [entry["time_sec"] for entry in results]
+times = [entry["time_sec_mean"] for entry in results]  # Use mean time
+std_devs = [entry["time_sec_std"] for entry in results]
 
 # Write results to an MD file with table view
 with open('./results/benchmarks.md', 'w') as md_file:
@@ -43,13 +42,12 @@ with open('./results/benchmarks.md', 'w') as md_file:
     md_file.write('| Program | Time (seconds) |\n')
     md_file.write('|---------|----------------|\n')
     for entry in results[::-1]:
-        md_file.write(f'| {entry["program"]} | {entry["time_sec"]:.6f} sec |\n')
+        md_file.write(f'| {entry["program"]} | {entry["time_sec_mean"]:.6f} ± {entry["time_sec_std"]:.6f} sec |\n')
+    md_file.write('\n![Performance Chart](benchmarks.png)\n')
 
-    md_file.write('\n![Performance Chart](benchmark.png)\n')
-
-# Plot the performance comparison
+# Plot the performance comparison with error bars
 plt.figure(figsize=(10, 5))
-plt.barh(programs, times, color='darkblue')
+plt.barh(programs, times, xerr=std_devs, color='darkblue', ecolor='red', capsize=5)
 plt.xlabel('Time (seconds)')
 plt.ylabel('Program')
 plt.title('Dictionary Performances')

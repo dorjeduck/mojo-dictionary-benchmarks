@@ -7,6 +7,10 @@
 
 # results
 /results/*.json
+/results/*.csv
 # binaries
 /bin/*
 .idea
+
+# Added by cargo
+/target

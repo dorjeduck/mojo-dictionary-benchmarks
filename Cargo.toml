@@ -1,0 +1,19 @@
+[package]
+name = "mojo-dictionary-benchmarks"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ahash = "0.8.12"
+rustc-hash = { version = "2.1" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[build.rustflags]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-A", "unused_imports"
+]
